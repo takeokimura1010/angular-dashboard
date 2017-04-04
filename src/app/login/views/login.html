@@ -1,0 +1,91 @@
+<!--[if lte IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/Base64/0.3.0/base64.min.js"></script> <![endif]-->
+<ng-include src="'login/views/menu.html'"></ng-include>
+<h2 class="login-title">
+  <span class="underline">Login</span>
+</h2>
+<section class="login-body">
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+      <img alt="Ciris Informatic Solutions" class="img-responsive center-block" src="/resources/images/Aries-Soft.png">
+      <br>
+      <section ng-show="!vm.reset">
+        <form ng-submit="vm.login(login_form, vm.user)" class="form-horizontal" name="login_form" novalidate="novalidate" autocomplete="off">
+          <div class="form-group" ng-class="{ 'has-error': (login_form.$submitted || login_form.user.$touched) && login_form.user.$invalid }">
+            <label for="user" class="control-label col-sm-3" ng-bind="'login.views.user' | translate"></label>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <input name="user" id="user" type="text" placeholder="user@firelabinc.com" class="form-control"
+                 ng-required="true" ng-model="vm.user.login">
+                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+
+              </div>
+               <div class="help-block" ng-messages="login_form.user.$error" ng-if="login_form.$submitted || login_form.user.$touched">
+                 <div ng-messages-include="base/views/messages.html"></div>
+               </div>
+            </div>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': (login_form.$submitted || login_form.password.$touched) && login_form.password.$invalid }">
+            <label for="password" class="control-label col-sm-3" ng-bind="'login.views.pass' | translate"></label>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <input name="password" id="password" type="password" placeholder="********" class="form-control"
+                 ng-required="true" ng-model="vm.user.password">
+                <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
+              </div>
+               <div class="help-block" ng-messages="login_form.password.$error" ng-if="login_form.$submitted || login_form.password.$touched">
+                 <div ng-messages-include="base/views/messages.html"></div>
+               </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="remember" class="control-label col-sm-3" ng-bind="'login.views.remember' | translate"></label>
+            <div class="col-sm-5">
+              <cis-switch id="remember" name="remember" ng-model="vm.user.remember" type="success"></cis-switch>
+            </div>
+            <label id="login-link" class="control-label col-sm-4" ng-bind="'login.views.forgotPassword' | translate" ng-click="vm.reset=!vm.reset"></label>
+          </div>
+          <div class="login-button">
+            <button class="btn btn-lg btn-success" type="Submit">
+              <i class="fa fa-fw fa-sign-in"></i>
+              {{'login.views.firebase' | translate}}
+            </button>
+          </div>
+        </form>
+      </section>
+      <section ng-show="vm.reset">
+        <form ng-submit="vm.submitEmail(reset_form, vm.userEmail)" name="reset_form" novalidate="novalidate" autocomplete="off">
+          <h4>
+            <strong ng-bind="'login.views.forgotPassword' | translate"></strong>
+          </h4>
+          <div class="form-group" ng-class="{ 'has-error': (reset_form.$submitted || reset_form.userEmail.$touched) && reset_form.userEmail.$invalid }">
+            <p for="user" class="control-label" ng-bind="'login.views.enterEmail' | translate"></p>
+            <div class="input-group">
+              <input name="user" id="user" type="text" placeholder="user@firelabinc.com" class="form-control"
+               ng-required="true" ng-model="vm.userEmail">
+              <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+            </div>
+            <div class="help-block" ng-messages="reset_form.userEmail.$error" ng-if="reset_form.$submitted || reset_form.userEmail.$touched">
+              <div ng-messages-include="base/views/messages.html"></div>
+            </div>
+          </div>
+          <ul class="list-inline text-center panel-options panel-options--bottom">
+            <li>
+              <a class="btn btn-primary" ng-click="vm.reset=!vm.reset">
+                <i class="fa fa-fw fa-reply"></i>
+                <span class="hidden-xs" ng-bind="'common.cancel' | translate"></span>
+              </a>
+            </li>
+            <li>
+              <button class="btn btn-success" type="submit">
+                <i class="fa fa-fw fa-paper-plane"></i>
+                <span class="hidden-xs">{{"common.submit" | translate}}</span>
+              </button>
+            </li>
+          </ul>
+        </form>
+      </section>
+      <br>
+    </div>
+  </div>
+</section>

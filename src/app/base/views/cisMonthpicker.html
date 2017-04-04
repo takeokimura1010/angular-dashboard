@@ -1,0 +1,26 @@
+<div class="input-group">
+  <span class="input-group-addon" ng-click="open()"><i class="fa fa-fw fa-calendar"></i></span>
+  <p class="form-control-static" ng-click="open()">
+    {{model | Date:'MMMM, YYYY'}}
+  </p>
+  <div class="monthpicker container-fluid" ng-if="!hidden">
+    <div class="row header">
+      <div class="col-xs-2" ng-click="moveYear(-1)">
+        <i class="fa fa-fw fa-chevron-left" ng-if="showBackButton()"></i>
+      </div>
+      <div class="col-xs-8">
+        {{year()}}
+      </div>
+      <div class="col-xs-2" ng-click="moveYear(1)">
+        <i class="fa fa-fw fa-chevron-right"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4" ng-repeat="month in months"
+        ng-click="setDate(month)"
+        ng-class="{disabled: disableMonth(month), active:activeMonth(month)}">
+        {{month.format("MMMM")}}
+      </div>
+    </div>
+  </div>
+</div>

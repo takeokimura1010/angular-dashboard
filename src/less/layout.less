@@ -1,0 +1,251 @@
+/* Layout */
+html, body, main {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width:100%;
+
+}
+
+@border-color: #ddd;
+@header-height: 100px;
+#main-navbar-collapse {
+  font-size: 14px;
+  .nav-logo {
+    float: left;
+    img {
+      height: @header-height;
+      padding: 10px;
+    }
+  }
+  .nav-links {
+    float: left;
+    padding-left: 32px;
+    ul {
+      height: @header-height;
+      li {
+        height: 100%;
+        a {
+          height: 100%;
+          padding-top: 38px;
+          color: @brand-success;
+          &:hover {
+            color: #FFF;
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      padding: 0;
+      font-size: 13px;
+      a {
+        padding: 10px 20px !important;
+      }
+    }
+  }
+  .nav-submenu {
+    float: right;
+    padding-top: 34px;
+    .dropdown {
+      float: left;
+      .cursor-pointer
+    }
+    .dropdown-menu {
+      font-size: 12px;
+      min-width: 150px;
+      padding: 0;
+      li {
+        width: 100%;
+        height: 50%;
+      }
+      a {
+        line-height: 2.5;
+      }
+    }
+    .dropdown-secondary {
+      right:0;
+      left: auto;
+      li a i{
+        margin-right: 5px;
+      }
+      hr {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.navbar {
+  z-index: 1000;
+  .active > a{
+    color: #FFF !important;
+  }
+}
+
+.panel-primary {
+  margin-top: 110px;
+}
+
+.splash {
+  position: absolute;
+  z-index: 2000;
+  background: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.splash-title {
+  padding: 1em;
+  border-radius: 0.4em;
+  background: @brand-success;
+  text-align: center;
+  max-width: 500px;
+  margin: 15% auto;
+  padding: 20px;
+  * {
+    color: @text-color;
+  }
+}
+.splash-title h1 {
+  font-size: 26px;
+}
+
+.aside-form{
+  padding-left: 0;
+
+  .form-group div{
+    select.form-control{
+      border: 1px solid;
+    }
+  }
+
+  ul{
+    padding-left: 0;
+
+    li{
+      display: block;
+      a{
+        color: black;
+
+        &.selected-aside{
+          color: @brand-success;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.right-aside-form{
+  padding-left: 0px;
+  ul{
+    padding-left: 0;
+    li{
+      display: block;
+      a{
+        color: black;
+
+        &.selected-aside{
+          color: @brand-success;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  @media( min-width: 992px ) {
+    padding-left: 50px;
+  }
+}
+
+.modal-content {
+  background: @brand-success !important;
+}
+
+.data-list {
+  border: 4px solid @brand-success;
+  margin-right: 2%;
+  height: 100%;
+}
+
+.table-full, .table-half, .table-quarter {
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+}
+
+.table-half {
+  width: 50%;
+  border-right: 4px solid @brand-success;
+}
+
+.table-quarter {
+  width: 25%;
+  border-right: 4px solid @brand-success;
+}
+
+.half-size{
+  width: 50%;
+}
+
+.quarter-size {
+  width: 25%;
+}
+
+.table-fire {
+  margin-top: 25px;
+  font-size: 14px;
+  thead {
+    background: @brand-primary;
+    color: #fff;
+  }
+  tbody {
+    background: #fff;
+  }
+  tbody > tr {
+    &:hover {
+      background: lightgray;
+    }
+  }
+}
+
+.table-centered {
+  th, tbody {
+    text-align: center;
+  }
+}
+
+.item--note {
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+
+.icon--note {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  position: absolute;
+  right: 38px;
+}
+
+.help-block {
+  font-size: 14px !important;
+}
+
+.ui-button {
+  text-decoration: none !important;
+}
+
+.ui-button-text-only {
+  padding: 0;
+}
+
+#ui-datepicker-div {
+  z-index: 99999 !important;
+}
+
+.overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

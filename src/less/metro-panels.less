@@ -1,0 +1,204 @@
+.metro{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+  div{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 70px;
+    a{
+      height: inherit;
+      text-decoration: none;
+    }
+    i{
+      font-size:2em;
+      display:block;
+      text-align: center;
+      width: 100%;
+    }
+    p{
+      margin:0;
+      padding:0;
+      text-transform: uppercase;
+      font-size:0.5em;
+    }
+    @media (min-width: @screen-xs) {
+      i{
+        font-size:2em;
+      }
+      p{
+        font-size:0.5em;
+      }
+    }
+    @media (min-width: @screen-sm) {
+      height: 120px;
+      width: 50%;
+      i{
+        font-size:2.5em;
+      }
+      p{
+        font-size:0.6em;
+      }
+    }
+    @media (min-width: @screen-md) {
+      height: 140px;
+      width: 33.3%;
+      i{
+        font-size:3em;
+      }
+      p{
+        font-size:0.7em;
+      }
+    }
+    @media(min-width: @screen-lg){
+      height: 200px;
+      width: 25%;
+      i{
+        font-size:5em;
+      }
+      p{
+        font-size:0.8em;
+      }
+    }
+  }
+}
+
+
+
+.metro--large{
+  @media (min-width: @screen-sm) {
+    width: 100% !important;
+  }
+  @media (min-width: @screen-md) {
+    width: 66.6% !important;
+  }
+  @media(min-width: @screen-lg){
+    width: 50% !important;
+  }
+}
+
+.metro--small{
+  @media (min-width: @screen-sm) {
+    width: 25% !important;
+  }
+  @media (min-width: @screen-md) {
+    width: 16.65% !important;
+  }
+  @media(min-width: @screen-lg){
+    width: 12.5% !important;
+  }
+}
+
+.metro--color(@color, @opaque-color){
+  a{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background:@color;
+    border: 1px solid @color;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+    margin: 0.2em;
+  }
+
+  a:hover{
+    text-decoration: none;
+    background: @opaque-color;
+    border: 1px solid @opaque-color;
+  }
+}
+
+.metro--purple{
+  .metro--color(@purple, @purple-shine);
+}
+
+.metro--purple-dark{
+  .metro--color(@purple-dark, @purple-dark-shine);
+}
+
+.metro--indigo{
+  .metro--color(@indigo, @indigo-shine);
+}
+
+.metro--blue{
+  .metro--color(@blue, @blue-shine);
+}
+
+.metro--blue-light{
+  .metro--color(@blue-light, @blue-light-shine);
+}
+
+.metro--cyan{
+  .metro--color(@cyan, @cyan-shine);
+}
+
+.metro--turquois{
+  .metro--color(@turquois, @turquois-shine);
+}
+
+.metro--green{
+  .metro--color(@green, @green-shine);
+}
+
+.metro--green-light{
+  .metro--color(@green-light, @green-light-shine);
+}
+
+.metro--lime{
+  .metro--color(@lime, @lime-shine);
+  *{
+    color: #444 !important;
+  }
+}
+
+.metro--yellow{
+  .metro--color(@yellow, @yellow-shine);
+  *{
+    color: #444 !important;
+  }
+}
+
+.metro--ambar{
+  .metro--color(@ambar, @ambar-shine);
+  *{
+    color: #444 !important;
+  }
+}
+
+.metro--orange{
+  .metro--color(@orange, @orange-shine);
+}
+
+.metro--orange-dark{
+  .metro--color(@orange-dark, @orange-dark-shine);
+}
+
+.metro--red{
+  .metro--color(@red, @red-shine);
+}
+
+.metro--pink{
+  .metro--color(@pink, @pink-shine);
+}
+
+.metro--gray-light{
+  .metro--color(@gray-light, @gray);
+}
+
+.metro--gray{
+  .metro--color(@gray, @gray-dark);
+}
+
+.metro--gray-dark{
+  .metro--color(@gray-dark, @gray-darker);
+}

@@ -1,0 +1,74 @@
+.borders(@grad){
+  border-image: @grad 1 stretch;
+}
+
+.colorgraph-base(){
+  border: 2px solid #ddd;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.colorgraph {
+  .colorgraph-base();
+  .borders(@gradient);
+}
+
+.colorgraph-shine {
+  .colorgraph-base();
+  .borders(@gradient-shine);
+}
+
+.colorgraph-pastel {
+  .colorgraph-base();
+  .borders(@gradient-pastel);
+}
+
+.colorgraph-opaque {
+  .colorgraph-base();
+  .borders(@gradient-opaque);
+}
+
+hr.colorgraph {
+  margin: 5px 0 15px 0px;
+  .colorgraph;
+}
+
+hr.colorgraph-shine {
+  margin: 5px 0 15px 0px;
+  .colorgraph-shine;
+}
+
+hr.colorgraph-pastel {
+  margin: 5px 0 15px 0px;
+  .colorgraph-pastel;
+}
+
+hr.colorgraph-opaque {
+  margin: 5px 0 15px 0px;
+  .colorgraph-opaque;
+}
+
+.divColorgraph(@grad){
+  background: #fff;
+  height: 6px;
+  background-image: @grad;
+  background-size: 100% 6px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+div.colorgraph{
+  .divColorgraph(@gradient);
+}
+
+div.colorgraph-shine{
+  .divColorgraph(@gradient-shine);
+}
+
+div.colorgraph-opaque{
+  .divColorgraph(@gradient-opaque);
+}
+
+div.colorgraph-pastel{
+  .divColorgraph(@gradient-pastel);
+}

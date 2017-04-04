@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <title cis-title>Aries</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="Subject" content="">
+  <meta name="description" content="">
+  <meta name="abstract" content="">
+  <meta name="classification" content="">
+  <meta name="keywords" content="">
+  <meta name="country" content="Costa Rica">
+  <link rel="shortcut icon" href="resources/images/Aries-Icon.png" type="image/png">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet" media="all">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <meta name="Robots" content="index,follow">
+  <meta name="author" content="Ciris Informatic Solutions">
+  <meta name="revised" content="Ciris Informatic Solutions, 29/01/2016" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="vendor.min.js"></script>
+  <script type="text/javascript" src="urlApi.js"></script>
+  <script type="text/javascript" src="logic.js"></script>
+  <script type="text/javascript" src="templates.js"></script>
+  <script type="text/javascript" src="resources/js/sheetjs.all.min.js"></script>
+  <script src="http://ci.ciriscr.com:1337/vorlon.js"></script>
+</head>
+
+<body>
+  <main ui-view id="main">
+    <!-- Simple splash screen-->
+    <div class="splash">
+      <div class="splash-title">
+        <!--[if lt IE 7]>
+          <p class="alert alert-danger animated rubberBand"><i class="fa fa-fw fa-hourglass-2 text-danger"></i> You are using a <strong>very old</strong> web browser. Please, update your browser.</p>
+        <![endif]-->
+        <h1 ng-bind="'title' | translate"></h1>
+        <p ng-bind="'index.loading' | translate"></p>
+        <i class="fa fa-fw fa-circle-o-notch fa-2x fa-spin"></i>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

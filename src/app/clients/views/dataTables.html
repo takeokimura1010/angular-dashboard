@@ -1,0 +1,45 @@
+<div class="red-box sub-panel">
+  <h4>Summary</h4>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="clickable" ng-click="showDetails = !showDetails">
+            Employees
+            <i ng-class="{'fa fa-chevron-down':!showDetails, 'fa fa-chevron-up':showDetails}"></i>
+          </th>
+          <th>Customers</th>
+          <th>Incomplete Reports</th>
+          <th>Complete Reports</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td ng-bind="vm.summary.employees.length"></td>
+          <td ng-bind="vm.summary.customers.length"></td>
+          <td ng-bind="vm.summary.incompleteReps.qty"></td>
+          <td ng-bind="vm.summary.completeReps.qty"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-if="showDetails" class="animate">
+    <h4>Reports by Inspector<span class="small-title">(Incomplete | Complete)</span></h4>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th ng-repeat="employee in vm.summary.employees track by $index">{{employee.name}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="(key, value) in vm.details track by $index">
+            <th>{{key}}</th>
+            <td ng-repeat="val in value track by $index">{{val.incQty}} | {{val.comQty}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

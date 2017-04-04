@@ -1,0 +1,108 @@
+.red-box{
+  padding: 1em;
+  border-radius: 3px;
+  background:@brand-primary;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  a{
+    color: #fff;
+  }
+  .data {
+    margin-top: 1em;
+    background: #fff;
+    li{
+      color: @text-color;
+      cursor: pointer;
+      border-radius: 5px;
+      clear:left;
+      font-size:small;
+      padding: 10px;
+    }
+    li:hover{
+      background: lightgray;
+    }
+  }
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 8.5px;
+  }
+  .lead {
+    margin-top: 12.5px;
+  }
+  hr {
+    margin-top: 5px;
+  }
+  .form-group, .form-control {
+    font-size: 14px;
+  }
+  .form-horizontal {
+    .form-control {
+      height: 35px;
+    }
+  }
+  label, h3, .form-head {
+    color: @brand-success;
+  }
+  thead {
+    background: @brand-success;
+  }
+}
+
+.flex {
+  display: flex;
+  min-height: 500px;
+}
+
+.sub-panel {
+  margin-top: 15px;
+  thead, tbody > tr > th {
+    background: @brand-success;
+    color: #FFF;
+  }
+  thead > tr > th, tbody {
+    text-align: center;
+  }
+  tbody {
+    background: #FFF;
+  }
+  tbody > tr:nth-child(even) {
+    background: lightgray;
+  }
+  tbody > tr > th {
+    text-align: right;
+  }
+  h4 {
+    color: @brand-success;
+  }
+}
+
+.free-check {
+  margin: 0;
+  position: relative;
+  label {
+    font-weight: normal;
+  }
+  .until-date {
+    display: inline-block;
+    width: 123px;
+  }
+  .fa {
+    cursor: pointer;
+  }
+  .fa-calendar {
+    position: absolute;
+    right: 74px;
+    bottom: 12px;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.small-title {
+  position: relative;
+  font-size: 18px;
+  left: 10px;
+  bottom: 3px;
+  color: @brand-success;
+}

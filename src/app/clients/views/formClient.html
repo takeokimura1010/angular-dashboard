@@ -1,0 +1,106 @@
+<div class="red-box" ng-if="vm.client">
+
+  <div class="row">
+    <div class="col-md-8 form-head">
+      <h3 ng-bind="vm.client.businessName"></h3>
+      <span>Subscribed on {{vm.client.subscribedOn | date}}</span>
+      <span ng-show="vm.client.trial && !vm.client.freeExpDate">{{' | Remaining days: ' + vm.client.remainingDays }}</span>
+    </div>
+    <div ng-if="!vm.client.deactivated" class="col-md-4 free-check" ng-init="vm.initDate(vm.client.freeExpDate)">
+      <label><input type="checkbox" ng-model="vm.freeCheck" ng-change="vm.removeFree(vm.freeCheck)">&nbsp;Free User</label>
+      <div ng-if="vm.freeCheck">
+        <label>Expires</label>
+        <input class="form-control until-date" type="text" date-input ng-model="vm.freeExpDate" ng-change="vm.saveDate(vm.freeExpDate)">
+        <i class="fa fa-fw fa-calendar text-muted"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+  <hr>
+  <div class="row form-horizontal">
+    <div class="form-group">
+      <label class="col-md-3 control-label">First name:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.firstName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Last name:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.lastName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Email:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Business name:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.businessName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Business phone:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.businessPhone">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Business address:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.businessAddress">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">City:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.city">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">State:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.state">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Zip code:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.zip">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">How did you find us:</label>
+      <div class="col-md-8">
+        <input ng-disabled="!vm.editable" type="text" class="form-control" ng-model="vm.client.findUs">
+      </div>
+    </div>
+    <ul class="list-inline panel-options text-center panel-options--bottom">
+      <li ng-show="!vm.client.freeExpDate && !vm.client.trial">
+        <button class="btn btn-success" type="button" style="padding: 8px 0;" ng-click="vm.deactivate(vm.client)" ng-disabled="vm.client.deactivationDate">
+          <i class="fa fa-fw fa-user-times"></i>
+          <span class="hidden-xs">{{'common.deactivate' | translate}}</span>
+        </button>
+        <div ng-if="vm.client.deactivationDate">Deactivate: {{vm.client.deactivationDate}}</div>
+      </li>
+      <li ng-show="vm.client.deactivationDate">
+        <button class="btn btn-success" type="button" style="padding: 8px 0;" ng-click="vm.activate(vm.client)">
+          <i class="fa fa-fw fa-user"></i>
+          <span class="hidden-xs">{{'common.activate' | translate}}</span>
+        </button>
+        <div>&nbsp;</div>
+      </li>
+      <!--li>
+        <button class="btn btn-success" type="button">
+          <i class="fa fa-fw fa-trash-o"></i>
+          <span class="hidden-xs">{{'common.delete' | translate}}</span>
+        </button>
+      </li-->
+    </ul>
+  </div>
+</div>
+<div ng-include="'clients/views/dataTables.html'"></div>

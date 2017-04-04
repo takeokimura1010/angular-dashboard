@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1>{{'common.list' | translate }}</h1>
+    </div>
+    <div class="panel-body">
+      <ul class="list-inline text-center panel-options panel-options--top" hide-action permission="FILE" action="create">
+        <li><a ui-sref="^.FILE-one" class="btn btn-success"><i class="fa fa-fw fa-file"></i> {{'common.new' | translate}} FILE</a></li>
+      </ul>
+      <p class="lead text-muted text-center" ng-if="vm.list.length === 0">
+        <i class="fa fa-fw fa-list"></i>
+        <span>{{'admin.views.listNAME.noData' | translate}}.</span>
+      </p>
+      <div class="table-responsive" ng-if="vm.list.length > 0">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr ng-repeat="FILE in vm.list.docs track by $index">
+              <td ng-bind="(vm.page - 1) * vm.qty + $index + 1" ui-sref="^.FILE-one({id: FILE._id})"></td>
+              <td ng-bind="FILE.name" ui-sref="^.FILE-one({id: FILE._id})"></td>
+              <td>
+                <ul class="table-options">
+                  <li tooltip="'common.edit' | translate" ui-sref="^.FILE-one({id: FILE.$id, edit: true})"><i class="text-info fa fa-fw fa-edit" hide-action permission="FILE" action="edit"></i></li>
+                  <li tooltip="'common.remove' | translate" ng-click="vm.remove(FILE)"><i class="text-danger fa fa-fw fa-trash" hide-action permission="FILE" action="remove"></i></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination ng-model="vm.page" total-items="vm.list.length" ng-change="vm.updatePage(vm.page - 1)" items-per-page="vm.qty"></pagination>
+      </div>
+    </div>
+  </div>
+</div>

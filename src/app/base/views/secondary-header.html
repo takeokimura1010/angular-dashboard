@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationCtrl as nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar-collapse">
+      <div class="nav-logo">
+        <img alt="Aries" src="/resources/images/Aries-Soft.png">
+      </div>
+      <div class="nav-links">
+        <ul class="nav navbar-nav nav-center">
+          <li uib-dropdown ui-sref-active="active" ng-repeat="state in nav.states track by state.name">
+            <a uib-dropdown-toggle ng-class="{'active-page': state.active}" ui-sref="{{state.name}}">
+              <i class="fa fa-fw {{state.data.icon}}"></i>
+              <span class="nav-label">{{state.data.menu | translate | uppercase}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-submenu">
+        <div class="dropdown" uib-dropdown >
+          <a class="dropdown-toggle" uib-dropdown-toggle>
+            <img src="../../../resources/images/dropDown.png" class="submenu-icon" alt="">
+          </a>
+          <ul class="dropdown-menu dropdown-secondary">
+            <li>
+              <a ng-click="nav.logout()">
+                <i class="fa fa-fw fa-sign-out"></i>
+                <span ng-bind="'base.views.navigation.logout' | translate"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

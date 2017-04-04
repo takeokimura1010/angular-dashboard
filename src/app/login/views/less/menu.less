@@ -1,0 +1,107 @@
+.menu-image{
+  max-width: 225px;
+  margin-top: -3px;
+}
+.menu-bar{
+  display: none;
+  &:after{
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+.menu-bar__logo{
+  float: left;
+}
+.menu-bar__list{
+  float: right;
+  height: 100%;
+}
+.menu-bar__item{
+  display: block;
+  float: left;
+  color: @brand-success;
+  border: 2px solid @brand-success;
+  border-radius: 25px;
+  margin-left: 6px;
+  font-weight: bold;
+  text-align: center;
+  width: 65px;
+  height: 30px;
+  line-height: 27px;
+  margin-top: 20px;
+  font-size: 0.75rem;
+  &:hover{
+    background-color: @brand-success;
+    color: @body-bg;
+    text-decoration: none;
+  }
+}
+
+.menu-bar,
+.burguer-menu-bar{
+  background-color: @brand-primary;
+  padding: 5px 15px;
+  height: 75px;
+}
+.burguer-menu-bar__logo{
+  float: left;
+}
+.burguer-menu-bar__icon{
+  float: right;
+  line-height: 85px;
+  i{
+    color: @brand-success;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.burguer-menu-bar__list{
+  display: none;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 5px 15px;
+  z-index: 200;
+}
+.burguer-menu-bar__item{
+  margin-bottom: 15px;
+  height: 50px;
+  line-height: 40px;
+  border-bottom: thin solid @brand-primary;
+  color: @body-bg;
+  &:hover{
+    color: @brand-success;
+    text-decoration: none;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .menu-bar{
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .burguer-menu-bar{
+    display: none;
+  }
+}
+
+@media(min-width:1200px) {
+  .menu-bar__item{
+    width: 70px;
+    font-size: 1em;
+    margin-left: 10px;
+    text-transform: none;
+    font-weight: normal;
+    &:hover{
+      background-color: @brand-success;
+      color: @body-bg;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div>
+  <div ng-show="cisArchivo" class="img-container row">
+    <div class="btn-group text-left" id="img-controls">
+      <button class="btn btn-xs btn-primary" uib-tooltip="Zoom Out" ng-click="zoomOut()">
+        <i class="fa fa-fw fa-search-minus"></i>
+      </button>
+      <button class="btn btn-xs btn-primary" uib-tooltip="Upload" ng-click="exportCrop()">
+        <i class="fa fa-fw fa-upload"></i>
+      </button>
+      <button class="btn btn-xs btn-primary" uib-tooltip="Zoom In" ng-click="zoomIn()">
+        <i class="fa fa-fw fa-search-plus"></i>
+      </button>
+      <button class="btn btn-xs btn-warning" uib-tooltip="Cancel" ng-click="cancelCrop()">
+        <i class="fa fa-fw fa-times"></i>
+      </button>
+    </div>
+    <img id="{{idImage}}" ng-src="{{cisArchivo | ngfDataUrl}}" class="img-display"/>
+  </div>
+  <!--Botón de seleccion-->
+  <div ng-if="estado !== estados.previa" class="img-select row">
+    <div class="text-center">
+      <img src="/resources/images/No-image-found.jpg" id="no-image" height="147"/>
+    </div>
+    <button class="btn btn-xs btn-primary action-btn" ngf-select="archivoSeleccionado($file)" accept="{{acepta}}">
+      <i class="fa fa-upload"></i>
+      <span ng-if="!small">{{'common.select' | translate}}</span>
+      <span ng-if="small">{{'common.select-small' | translate}}</span>
+    </button>
+  </div>
+  <!--Barra de progreso-->
+  <div class="img-display row" ng-if="estado === estados.subiendo">
+      <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+      <button class="btn btn-xs btn-danger action-btn" ng-click="cancelarSubida()">
+        <i class="fa fa-fw fa-ban"></i>{{'common.abort' | translate}}
+      </button>
+  </div>
+</div>

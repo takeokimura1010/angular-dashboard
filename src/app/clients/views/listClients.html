@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="row flex">
+        <div class="col-md-4 red-box">
+          <p class="lead text-muted text-center" ng-if="vm.clients.length === 0">
+            <i class="fa fa-fw fa-list"></i>
+            <span>{{'client.views.listClients.noData' | translate}}.</span>
+          </p>
+          <div ng-if="vm.clients.length > 0">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group search-bar">
+                  <input class="form-control" type="text" ng-model="vm.searchText" placeholder="Search">
+                  <i class="fa fa-search input-group-addon"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <select class="form-control" ng-model="vm.filterBy">
+                  <option ng-value="opt" ng-repeat="opt in vm.filterOptions" ng-disabled="$index === 4">{{opt}}</option>
+                </select>
+              </div>
+            </div>
+            <ul class="list-group data">
+              <li class="list-group-item" ng-repeat="client in vm.clients | orderBy:'subscribedOn':true
+              | filter: vm.searchText track by $index" ui-sref="index.clients.single({idClient: client.$id})" ng-show="vm.showClient( client, vm.filterBy )">
+               <div class="row">
+                 <div class="col-md-6 overflow">
+                   <span ng-bind="client.businessName"></span>
+                 </div>
+                 <div class="col-md-6 overflow">
+                   <span ng-bind="client.businessAddress + ', ' + client.city + ', ' + client.state + ' ' + client.zip" ></span>
+                 </div>
+               </div>
+               </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8" ui-view></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+before_script:
+  - . ~/.nvm/nvm.sh
+  - nvm use 6.9.1
+  - npm install -g gulp bower
+
+cache:
+  paths:
+    - node_modules/
+    - bower_components
+stages:
+  - deploy
+
+deploy_estable:
+  stage: deploy
+  script:
+    - npm install
+    - bower install
+    - gulp dist --node http://beta.firelabinc.com:3001/
+    - rsync -rlDv --delete dist /software/superadmin
+  environment:
+    name: estable
+    url: https://beta.firelabinc.com
+  only:
+  - estable

@@ -1,0 +1,56 @@
+{
+  "name": "Aeris",
+  "version": "1.0.0",
+  "authors": [
+    "Fabio Flores <fabio.flores@ciriscr.com",
+    "Esteban Leandro <esteban.leandro@ciriscr.com",
+    "Pablo Peraza <piousp@ciriscr.com>"
+  ],
+  "description": "Firelab Aeris",
+  "main": "scr/app/index.js",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "www.ciriscr.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-touch": "1.4.9",
+    "angular-animate": "1.4.9",
+    "angular-messages": "1.4.9",
+    "angular-mocks": "1.4.9",
+    "angular-scenario": "1.4.9",
+    "angular-sanitize": "~1.4.9",
+    "angular-translate": "~2.9.0",
+    "angular-bootstrap": "1.1.1",
+    "ui-router": "0.2.17",
+    "lodash": "3.10.0",
+    "moment": "2.11.1",
+    "font-awesome-animation": "0.0.8",
+    "accounting.js": "0.4.1",
+    "money.js": "https://github.com/openexchangerates/money.js.git#~0.1.3",
+    "angular-toastr": "1.7.0",
+    "satellizer": "0.13.4",
+    "angular-loading-bar": "0.8.0",
+    "animate.css": "animate-css#~3.5.1",
+    "angular-utils-ui-breadcrumbs": "0.2.2",
+    "ngstorage": "0.3.10",
+    "is_js": "0.7.6",
+    "angularfire": "~1.1.3",
+    "jquery-ui": "~1.11.4",
+    "uuid.js": "^3.3.0",
+    "jQuery.print": "^1.4.0",
+    "angular-simple-logger": "^0.1.7",
+    "angular-filter": "~0.5.8"
+  },
+  "resolutions": {
+    "angular": "1.4.9"
+  }
+}
