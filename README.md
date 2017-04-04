@@ -1,4 +1,4 @@
-# Firelab Admin
+# Admin
 
 [![build status](https://gitlab.com/firelab/firelab-dashboard/badges/desarrollo/build.svg)](https://gitlab.com/firelab/firelab-dashboard/commits/desarrollo)
 
